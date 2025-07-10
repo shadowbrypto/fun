@@ -7,16 +7,19 @@ function App() {
     <div className="container">
       <main className="main-content">
         <div className="content-wrapper">
+          {/* Grid pattern of stamped text - infinite coverage */}
+          <div className="stamp-grid">
+            {Array.from({ length: 400 }, (_, index) => (
+              <div key={index} className="stamp-text-grid">NOT FOR SALE</div>
+            ))}
+          </div>
+          
           <div className="trojan-horse">
             <img 
               src={trojanImage} 
               alt="Trojan Horse" 
               className="trojan-image"
             />
-          </div>
-          
-          <div className="main-text">
-            <h1 className="domain-text">DOMAIN NOT FOR SALE</h1>
           </div>
         </div>
       </main>

@@ -1,0 +1,106 @@
+.void-stamp {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.void-border {
+  border: 4px solid #ff0040;
+  border-radius: 12px;
+  background: rgba(255, 0, 64, 0.05);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 0 20px rgba(255, 0, 64, 0.3),
+    0 0 40px rgba(255, 0, 64, 0.1),
+    inset 0 0 10px rgba(255, 0, 64, 0.1);
+  backdrop-filter: blur(5px);
+  animation: voidPulse 4s ease-in-out infinite alternate;
+}
+
+.void-text {
+  font-family: 'Inter', 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ff0040;
+  text-shadow: 
+    0 0 5px rgba(255, 0, 64, 0.8),
+    0 0 10px rgba(255, 0, 64, 0.6),
+    0 0 15px rgba(255, 0, 64, 0.4),
+    0 0 20px rgba(255, 0, 64, 0.2);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Different sizes */
+.void-stamp-small .void-border {
+  padding: 0.5rem 1rem;
+  border-width: 2px;
+}
+
+.void-stamp-small .void-text {
+  font-size: 1.2rem;
+}
+
+.void-stamp-medium .void-border {
+  padding: 0.8rem 1.6rem;
+  border-width: 3px;
+}
+
+.void-stamp-medium .void-text {
+  font-size: 1.8rem;
+}
+
+.void-stamp-large .void-border {
+  padding: 1.2rem 2.4rem;
+  border-width: 4px;
+}
+
+.void-stamp-large .void-text {
+  font-size: 3rem;
+}
+
+.void-stamp-xlarge .void-border {
+  padding: 1.5rem 3rem;
+  border-width: 5px;
+}
+
+.void-stamp-xlarge .void-text {
+  font-size: 4rem;
+}
+
+@keyframes voidPulse {
+  0% {
+    border-color: rgba(255, 0, 64, 0.6);
+    box-shadow: 
+      0 0 15px rgba(255, 0, 64, 0.3),
+      0 0 30px rgba(255, 0, 64, 0.1),
+      inset 0 0 10px rgba(255, 0, 64, 0.1);
+  }
+  100% {
+    border-color: rgba(255, 0, 64, 1);
+    box-shadow: 
+      0 0 25px rgba(255, 0, 64, 0.5),
+      0 0 50px rgba(255, 0, 64, 0.3),
+      0 0 75px rgba(255, 0, 64, 0.1),
+      inset 0 0 20px rgba(255, 0, 64, 0.15);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .void-stamp-small .void-text { font-size: 1rem; }
+  .void-stamp-medium .void-text { font-size: 1.4rem; }
+  .void-stamp-large .void-text { font-size: 2.2rem; }
+  .void-stamp-xlarge .void-text { font-size: 3rem; }
+}
+
+@media (max-width: 480px) {
+  .void-stamp-small .void-text { font-size: 0.8rem; }
+  .void-stamp-medium .void-text { font-size: 1.2rem; }
+  .void-stamp-large .void-text { font-size: 1.8rem; }
+  .void-stamp-xlarge .void-text { font-size: 2.5rem; }
+}
