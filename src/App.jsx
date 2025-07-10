@@ -9,7 +9,7 @@ function App() {
         <div className="content-wrapper">
           {/* Grid pattern of stamped text - infinite coverage */}
           <div className="stamp-grid">
-            {Array.from({ length: 400 }, (_, index) => (
+            {Array.from({ length: 900 }, (_, index) => (
               <div key={index} className="stamp-text-grid">NOT FOR SALE</div>
             ))}
           </div>

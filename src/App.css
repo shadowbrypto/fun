@@ -90,22 +90,31 @@ body {
 /* Infinite grid layout for stamps */
 .stamp-grid {
     position: absolute;
-    top: -150%;
-    left: -150%;
-    width: 400%;
-    height: 400%;
+    top: -200%;
+    left: -200%;
+    width: 600%;
+    height: 600%;
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
     gap: 0;
     padding: 0;
     z-index: 2;
     overflow: visible;
-    transform: rotate(-45deg);
+    animation: scrollHorizontal 20s linear infinite;
+}
+
+@keyframes scrollHorizontal {
+    0% {
+        transform: rotate(-45deg) translateX(0);
+    }
+    100% {
+        transform: rotate(-45deg) translateX(-16.67%);
+    }
 }
 
 .stamp-text-grid {
-    padding: 2px 4px;
+    padding: 4px 8px;
     border: 1px solid #00ff88;
     border-radius: 2px;
     background: rgba(0, 255, 136, 0.02);
